@@ -17,7 +17,7 @@ int main() {
     // Generates the seed using the mersenne twister.
     std::mt19937 rgen(rseed());
     // Distributes the possible integers over a distance of 0-9.
-    std::uniform_int_distribution<int> idist(0, 9);  
+    std::uniform_int_distribution<int> idist(0, 9);
     // Sets the random number to the distributed integer.
     correctNumber = idist(rgen);
 
@@ -29,13 +29,12 @@ int main() {
     // Stores the user's choice in the chosen number variable.
     std::cin >> chosenNumber;
 
-    // Check if the user chose the correct number.
+    /* Check if the user chose the correct number. Otherwise, 
+    check if the user did not choose the correct number. */
     if (chosenNumber == correctNumber) {
         // Displays they got it correct.
         std::cout << "You guessed correct!" << std::endl;
-    }
-    // Otherwise, check if the user did not choose the correct number.
-    else {
+    } else {
         // Displays they got it wrong, and they must try again.
         std::cout << "You guessed wrong! The correct answer was "
         << correctNumber << "." << std::endl;
